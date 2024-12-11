@@ -1,7 +1,14 @@
+using _3312_Final_Project.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Bring in database context with dependency injection.
+builder.Services.AddDbContext<StudentDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("StudentConnection")));
 
 var app = builder.Build();
 
