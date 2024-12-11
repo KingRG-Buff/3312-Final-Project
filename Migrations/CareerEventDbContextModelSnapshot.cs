@@ -9,17 +9,17 @@ using _3312_Final_Project.Models;
 
 namespace _3312_Final_Project.Migrations
 {
-    [DbContext(typeof(EventDbContext))]
-    partial class EventDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CareerEventDbContext))]
+    partial class CareerEventDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
 
-            modelBuilder.Entity("_3312_Final_Project.Models.Event", b =>
+            modelBuilder.Entity("_3312_Final_Project.Models.CareerEvent", b =>
                 {
-                    b.Property<int>("EventID")
+                    b.Property<int>("CareerEventID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -39,9 +39,9 @@ namespace _3312_Final_Project.Migrations
                         .HasMaxLength(45)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("EventID");
+                    b.HasKey("CareerEventID");
 
-                    b.ToTable("Events");
+                    b.ToTable("CareerEvents");
                 });
 #pragma warning restore 612, 618
         }

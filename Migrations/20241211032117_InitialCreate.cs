@@ -12,10 +12,10 @@ namespace _3312_Final_Project.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Events",
+                name: "CareerEvents",
                 columns: table => new
                 {
-                    EventID = table.Column<int>(type: "INTEGER", nullable: false)
+                    CareerEventID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     EventName = table.Column<string>(type: "TEXT", maxLength: 45, nullable: false),
                     EventDate = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -24,7 +24,7 @@ namespace _3312_Final_Project.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Events", x => x.EventID);
+                    table.PrimaryKey("PK_CareerEvents", x => x.CareerEventID);
                 });
         }
 
@@ -32,7 +32,7 @@ namespace _3312_Final_Project.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Events");
+                name: "CareerEvents");
         }
     }
 }

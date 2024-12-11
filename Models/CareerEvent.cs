@@ -3,9 +3,9 @@ using System.Diagnostics.Tracing;
 
 namespace _3312_Final_Project.Models;
 
-public class Event
+public class CareerEvent
 {
-     public int EventID {get; set;} // Primary Key
+     public int CareerEventID {get; set;} // Primary Key
     
     [StringLength(45)]
     [Display(Name = "Event Name")]

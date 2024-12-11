@@ -2,13 +2,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _3312_Final_Project.Models;
 
-public class EventDbContext : DbContext
+public class CareerEventDbContext : DbContext
 {
-    public EventDbContext(DbContextOptions<EventDbContext> options)
+    public CareerEventDbContext(DbContextOptions<CareerEventDbContext> options)
             : base(options)
     {
 
     }
 
-    public DbSet<Event> Events {get; set;}
+    public DbSet<CareerEvent> CareerEvents {get; set;} = default!;
 }
