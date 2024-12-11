@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // Bring in database context with dependency injection.
-builder.Services.AddDbContext<StudentDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("StudentConnection")));
+builder.Services.AddDbContext<EventDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("EventConnection")));
 
 var app = builder.Build();
 

@@ -2,13 +2,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _3312_Final_Project.Models;
 
-public class StudentDbContext : DbContext
+public class EventDbContext : DbContext
 {
-    public StudentDbContext(DbContextOptions<StudentDbContext> options)
+    public EventDbContext(DbContextOptions<EventDbContext> options)
             : base(options)
     {
 
     }
 
-    public DbSet<Student> Students {get; set;}
+    public DbSet<Event> Events {get; set;}
 }
