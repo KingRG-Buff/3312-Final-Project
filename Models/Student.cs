@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace _3312_Final_Project.Pages.Models;
+namespace _3312_Final_Project.Models;
 
 public class Student
 {
