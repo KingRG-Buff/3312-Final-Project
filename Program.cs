@@ -1,4 +1,5 @@
 using _3312_Final_Project.Models;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,12 @@ builder.Services.AddDbContext<EventDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("EventConnection")));
 
 var app = builder.Build();
+
+//Seed Data
+using (var scope = app.Services.CreateScope())
+{
+    SeedData.Initialize(scope.ServiceProvider);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
