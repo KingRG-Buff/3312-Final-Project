@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _3312_Final_Project.Models;
 
@@ -10,9 +11,11 @@ using _3312_Final_Project.Models;
 namespace _3312_Final_Project.Migrations
 {
     [DbContext(typeof(CareerEventDbContext))]
-    partial class CareerEventDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241212222742_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
