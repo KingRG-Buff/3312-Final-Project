@@ -19,8 +19,6 @@ public class Student
     [Range(2024,2027)]
     [Display(Name = "Graduation Year")]
     public int GradYear {get; set;}
-    [Required] //Registration Requirement "Resume Reviewed" must be reviewed and marked Yes or No
-    public bool ResumeReview {get; set;}
 
     [Display(Name = "Registered Students")]
     public List<StudentRegistration>? StudentRegistrations {get; set;} = default!; // Navigation property. A student can register for many events
