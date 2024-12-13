@@ -22,7 +22,7 @@ namespace _3312_Final_Project.Pages.JobFairs
 
         public async Task OnGetAsync()
         {
-            CareerEvent = await _context.CareerEvents.ToListAsync();
+            CareerEvent = await _context.CareerEvents.Include(s => s.StudentRegistrations!).ThenInclude(rs => rs.Student).ToListAsync();
         }
     }
 }
