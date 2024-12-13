@@ -71,9 +71,6 @@ namespace _3312_Final_Project.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("ResumeReview")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("StudentID");
 
                     b.ToTable("Students");

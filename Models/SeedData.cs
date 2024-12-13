@@ -196,13 +196,7 @@ public static class SeedData
             new StudentRegistration { StudentID = 41, CareerEventID = 5 },
             new StudentRegistration { StudentID = 42, CareerEventID = 7 },
             new StudentRegistration { StudentID = 43, CareerEventID = 9 },
-            new StudentRegistration { StudentID = 44, CareerEventID = 11 },
-            new StudentRegistration { StudentID = 45, CareerEventID = 14 },
-            new StudentRegistration { StudentID = 46, CareerEventID = 16 },
-            new StudentRegistration { StudentID = 47, CareerEventID = 18 },
-            new StudentRegistration { StudentID = 48, CareerEventID = 2 },
-            new StudentRegistration { StudentID = 49, CareerEventID = 3 },
-            new StudentRegistration { StudentID = 50, CareerEventID = 5 }
+            new StudentRegistration { StudentID = 44, CareerEventID = 11 }
         };
         context.AddRange(studentRegistrations);
         context.SaveChanges();

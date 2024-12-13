@@ -11,7 +11,7 @@ using _3312_Final_Project.Models;
 namespace _3312_Final_Project.Migrations
 {
     [DbContext(typeof(CareerEventDbContext))]
-    [Migration("20241212222742_InitialCreate")]
+    [Migration("20241213024355_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -73,9 +73,6 @@ namespace _3312_Final_Project.Migrations
                     b.Property<string>("Major")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("ResumeReview")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("StudentID");
 

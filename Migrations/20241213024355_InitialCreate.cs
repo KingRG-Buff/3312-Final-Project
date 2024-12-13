@@ -37,8 +37,7 @@ namespace _3312_Final_Project.Migrations
                     LastName = table.Column<string>(type: "TEXT", maxLength: 25, nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     Major = table.Column<string>(type: "TEXT", nullable: false),
-                    GradYear = table.Column<int>(type: "INTEGER", nullable: false),
-                    ResumeReview = table.Column<bool>(type: "INTEGER", nullable: false)
+                    GradYear = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

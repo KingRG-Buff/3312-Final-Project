@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Career Development Events</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -70,7 +70,7 @@
             <td>
                 @foreach(var student in item.StudentRegistrations!)
                 {
-                    @student.Student.StudentRegistrations <br />
+                    @student.Student.FirstName @student.Student.LastName <br />
                 }
                 @if (item.StudentRegistrations.Count ==0)
                 {

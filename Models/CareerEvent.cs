@@ -30,6 +30,7 @@ public class StudentRegistration
     public int StudentID{get; set;} // Composite Primary Key, Foreign Key 2
     public Student Student {get; set;} = default!; //Navigation property
     public CareerEvent CareerEvent {get; set;} = default!; //Navigation Property
+    
     [DataType(DataType.Date)]
     [Display(Name = "Date Registered")]
     public DateTime RegisteredDate { get; set; }
