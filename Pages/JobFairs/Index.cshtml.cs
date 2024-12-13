@@ -19,6 +19,7 @@ namespace _3312_Final_Project.Pages.JobFairs
         }
 
         public IList<CareerEvent> CareerEvent { get;set; } = default!;
+        public IList<CareerEvent> Student { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

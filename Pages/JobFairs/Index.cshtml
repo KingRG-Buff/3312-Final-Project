@@ -47,7 +47,14 @@
                 @Html.DisplayFor(modelItem => item.EventDescription)
             </td>
             <td>
-
+                @foreach(var student in item.StudentRegistrations!)
+                {
+                    @student.Student.StudentRegistrations <br />
+                }
+                @if (item.StudentRegistrations.Count ==0)
+                {
+                    @:None Registered
+                }
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CareerEventID">Edit</a> |
