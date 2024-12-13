@@ -14,7 +14,15 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CareerEvent[0].EventName)
+                @{
+                    //Alternate sort order
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.CareerEvent[0].EventName)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CareerEvent[0].EventDate)
@@ -83,7 +91,7 @@
 }
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
-        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@Model.CurrentSort" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+        <li class="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-CurrentSort="@Model.CurrentSort" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
     </ul>
 </nav>

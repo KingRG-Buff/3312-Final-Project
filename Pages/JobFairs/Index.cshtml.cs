@@ -22,18 +22,33 @@ namespace _3312_Final_Project.Pages.JobFairs
         public IList<CareerEvent> Student { get;set; } = default!;
         public IList<CareerEvent> StudentRegistration { get; set; } = default!;
 
+        // Pagination support
         [BindProperty(SupportsGet = true)]
         public int PageNum {get; set;} = 1;
         public int PageSize {get; set;} = 10;
         public int TotalPages {get; set;}
 
+        // Sorting support
+        [BindProperty(SupportsGet = true)]
+        public string CurrentSort {get; set;} = string.Empty;
 
         public async Task OnGetAsync()
         {
-            TotalPages = (int)Math.Ceiling(_context.CareerEvents.Count() / (double)PageSize);
+            var query = _context.CareerEvents.Include(s => s.StudentRegistrations!).ThenInclude(rs => rs.Student).Select(s => s);
             
-            CareerEvent = await _context.CareerEvents.Include(s => s.StudentRegistrations!).ThenInclude(rs => rs.Student)
-            .Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+            switch (CurrentSort)
+            {
+                case "first_asc":
+                    query = query.OrderBy(s => s.EventName);
+                    break;
+                case "first_desc":
+                    query = query.OrderByDescending(s => s.EventName);
+                    break;
+            }
+            
+            TotalPages = (int)Math.Ceiling(query.Count() / (double)PageSize);
+
+            CareerEvent = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }
