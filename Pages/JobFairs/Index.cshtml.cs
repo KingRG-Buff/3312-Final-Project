@@ -45,6 +45,8 @@ namespace _3312_Final_Project.Pages.JobFairs
             {
                 query = query.Where(s => s.EventName.ToUpper().Contains(CurrentSearch.ToUpper()));
             }
+
+            //Sorting support
             switch (CurrentSort)
             {
                 case "first_asc":
@@ -52,6 +54,9 @@ namespace _3312_Final_Project.Pages.JobFairs
                     break;
                 case "first_desc":
                     query = query.OrderByDescending(s => s.EventName);
+                    break;
+                case "date_desc": 
+                    query = query.OrderByDescending(s => s.EventDate);
                     break;
             }
             

@@ -8,19 +8,20 @@ public class CareerEvent
      public int CareerEventID {get; set;} // Primary Key
     
     [StringLength(45)]
-    [Display(Name = "Event Name")]
+    [Display(Name = "Event_Name")]
     public string EventName {get; set;} = string.Empty;
     
     [DataType(DataType.Date)]
-    [Display(Name = "Event Date")]
+    [Display(Name = "Event_Date")]
     public DateTime EventDate { get; set; }
 
     [Display(Name = "Location")]
     public string EventLocation {get; set;} = string.Empty;
     
-    [Display(Name = "Event Information")]
+    [Display(Name = "Event_Information")]
     public string EventDescription {get; set;} = string.Empty;
 
+    [Display(Name = "Student_Registrations")]
     public List<StudentRegistration>? StudentRegistrations {get; set;} = default!; // Navigation property. A student can register for many events
 }
 

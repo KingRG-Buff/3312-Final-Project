@@ -8,27 +8,28 @@
 <h1>Career Development Events</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Event</a>
 </p>
 
 <div class="row">
     <form class="d-flex" role="search" asp-page="./Index" method="get">
-        <div class="col-3">
+        <div class="col-6">
             <div class="input-group">
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
-                <input class="form-control me-2" type="search" name="CurrentSearch" value="@Model.CurrentSearch" placeholder="Event Name" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-3" type="search" name="CurrentSearch" value="@Model.CurrentSearch" placeholder="Search Events" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
             </div>
         </div>
     </form>
 </div>
 
+<p>Tip: Sort by Event Name or Date</p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @{
-                    //Alternate sort order
+                    //Alternate sort order for EventName
                     var firstSort = "first_asc";
                     if (Model.CurrentSort == "first_asc")
                     {
@@ -38,7 +39,15 @@
                 <a asp-page="./Index" asp-route-CurrentSort="@firstSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.CareerEvent[0].EventName)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CareerEvent[0].EventDate)
+                @{
+                    // Alternate sort order for EventDate
+                    var dateSort = "date_asc";
+                    if (Model.CurrentSort == "date_asc")
+                    {
+                        dateSort = "date_desc";
+                    }
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@dateSort" asp-route-PageNum="@Model.PageNum">@Html.DisplayNameFor(model => model.CareerEvent[0].EventDate)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CareerEvent[0].EventLocation)
@@ -70,7 +79,7 @@
             <td>
                 @foreach(var student in item.StudentRegistrations!)
                 {
-                    @student.Student.FirstName @student.Student.LastName <br />
+                    @student.Student.LastName<b>,</b> @student.Student.FirstName  <br />
                 }
                 @if (item.StudentRegistrations.Count ==0)
                 {
@@ -84,7 +93,6 @@
             </td>
         </tr>
 }
-    </tbody>
 </table>
 
 <hr />

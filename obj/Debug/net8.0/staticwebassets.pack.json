@@ -129,6 +129,14 @@
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
+      "Id": "/Users/rg/Documents/Education/West Texas A&M/1 Undergraduate Degree/WT 2024/2024 3 Fall/CIDM3312/3312-Final-Project/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.bak",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.bak"
+    },
+    {
+      "Id": "/Users/rg/Documents/Education/West Texas A&M/1 Undergraduate Degree/WT 2024/2024 3 Fall/CIDM3312/3312-Final-Project/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.bak2",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.bak2"
+    },
+    {
       "Id": "/Users/rg/Documents/Education/West Texas A&M/1 Undergraduate Degree/WT 2024/2024 3 Fall/CIDM3312/3312-Final-Project/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
