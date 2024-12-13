@@ -32,10 +32,19 @@ namespace _3312_Final_Project.Pages.JobFairs
         [BindProperty(SupportsGet = true)]
         public string CurrentSort {get; set;} = string.Empty;
 
+        // Search support
+        [BindProperty(SupportsGet = true)]
+        public string CurrentSearch {get; set;} = string.Empty;
+
         public async Task OnGetAsync()
         {
             var query = _context.CareerEvents.Include(s => s.StudentRegistrations!).ThenInclude(rs => rs.Student).Select(s => s);
             
+            if (!string.IsNullOrEmpty(CurrentSearch))
+            //Case Insensitive search by Event Name
+            {
+                query = query.Where(s => s.EventName.ToUpper().Contains(CurrentSearch.ToUpper()));
+            }
             switch (CurrentSort)
             {
                 case "first_asc":
