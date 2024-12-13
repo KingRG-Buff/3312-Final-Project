@@ -20,10 +20,20 @@ namespace _3312_Final_Project.Pages.JobFairs
 
         public IList<CareerEvent> CareerEvent { get;set; } = default!;
         public IList<CareerEvent> Student { get;set; } = default!;
+        public IList<CareerEvent> StudentRegistration { get; set; } = default!;
+
+        [BindProperty(SupportsGet = true)]
+        public int PageNum {get; set;} = 1;
+        public int PageSize {get; set;} = 10;
+        public int TotalPages {get; set;}
+
 
         public async Task OnGetAsync()
         {
-            CareerEvent = await _context.CareerEvents.Include(s => s.StudentRegistrations!).ThenInclude(rs => rs.Student).ToListAsync();
+            TotalPages = (int)Math.Ceiling(_context.CareerEvents.Count() / (double)PageSize);
+            
+            CareerEvent = await _context.CareerEvents.Include(s => s.StudentRegistrations!).ThenInclude(rs => rs.Student)
+            .Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }
